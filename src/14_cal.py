@@ -37,23 +37,23 @@ def cal_func():
     # return current month if no input
     print("length:", len(sys.argv))
 
+    # error handling
     if len(sys.argv) > 3:
         print("Please provide only a month (mm) and year (yyyy)")
     elif type(sys.argv[1]) == str:
         print("Please use digits only. No letters or special characters can be used.")
+    # if no args, return todays month
     elif len(sys.argv) == 1:
         print(calendar.TextCalendar().prmonth(
             now.year, now.month))
+    # if 1 input, render month
     elif len(sys.argv) == 2:
         print(calendar.TextCalendar().prmonth(
             now.year, int(sys.argv[1])))
+    # if 2, month and year
     elif sys.argv[1] and sys.argv[2]:
         print(calendar.TextCalendar().prmonth(
             int(sys.argv[2]), int(sys.argv[1])))
-    # if 1 input, render month
-    # if 2, month and year
-    # error handling
-    # if no args, return todays month
 
 
 # cal_func(sys.argv[1], sys.argv[2])
