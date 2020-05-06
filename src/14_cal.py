@@ -39,6 +39,8 @@ def cal_func():
 
     if len(sys.argv) > 3:
         print("Please provide only a month (mm) and year (yyyy)")
+    elif type(sys.argv[1]) == str:
+        print("Please use digits only. No letters or special characters can be used.")
     elif len(sys.argv) == 1:
         print(calendar.TextCalendar().prmonth(
             now.year, now.month))
